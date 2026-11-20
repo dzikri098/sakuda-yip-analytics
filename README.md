@@ -11,6 +11,12 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
+
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+python3 -m streamlit run app.py
 ```
 
 Di Windows, aktifkan virtual environment dengan `.venv\\Scripts\\activate`.
@@ -35,6 +41,5 @@ File CSV yang dipakai secara lokal diabaikan Git melalui `.gitignore`. Jika file
 - Grafik pertumbuhan akun memakai timestamp registrasi, bukan kunjungan atau traffic situs.
 - Retensi dan conversion funnel memerlukan log sesi/kunjungan serta relasi akun dengan pendaftaran acara.
 - Filter kecamatan diambil dari teks alamat hanya jika nama kecamatan ditandai dengan jelas. Aspirasi dengan nilai kecamatan pendek diperlakukan sebagai kandidat kecamatan; tetap perlu validasi terhadap daftar wilayah resmi.
-- Halaman SAKUDA diperlakukan sebagai program/cohort pengguna sejak tanggal peluncuran 9 Oktober 2026, bukan sebagai acara. CSV pengguna menghasilkan cohort akun baru; “Terakhir Diperbarui” hanya ditampilkan sebagai proxy aktivitas lanjutan, bukan retensi login yang terverifikasi.
-- Rekap acara tidak menyediakan wilayah peserta dan tidak dipakai untuk menghitung cohort SAKUDA. Untuk mengatribusikan pendaftar ke program SAKUDA secara pasti, tambahkan sumber kampanye/program pada data pengguna; untuk retensi sebenarnya, tambahkan log login/sesi/aktivitas per pengguna.
+- Rekap acara tidak menyediakan wilayah peserta. Baris SAKUDA saat ini belum menyediakan total pendaftar, kuota, konfirmasi, atau presensi, sehingga aplikasi menampilkan “Data belum tersedia”.
 - Tampilan aspirasi hanya memuat judul dan atribut terpilih; identitas dan deskripsi lengkap tidak ditampilkan pada tabel analitik.

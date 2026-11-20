@@ -1,7 +1,7 @@
-# Local exports can contain personal information
-data-pengguna-*.csv
-rekap-aspirasi-pemuda-*.csv
-rekap-pelaksanaan-acara-*.csv
+# Local raw backups (kept on local machine only)
+.raw_backup/
+
+# Ignore temporary and cache files
 *.numbers
 .DS_Store
 __pycache__/
